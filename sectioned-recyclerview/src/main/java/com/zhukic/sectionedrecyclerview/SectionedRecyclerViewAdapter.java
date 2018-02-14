@@ -100,7 +100,7 @@ public abstract class SectionedRecyclerViewAdapter<SH extends RecyclerView.ViewH
         if (sectionManager.isSectionSubheaderOnPosition(position)) {
             return TYPE_HEADER;
         } else {
-            final int viewType = getViewType(position);
+            final int viewType = getViewType(sectionManager.getItemPositionForItemViewHolder(position));
             if (viewType == TYPE_HEADER) {
                 throw new IllegalStateException("wrong view type = " + viewType + " at position = " +
                         position + " . It's reserved for subheader view type");
